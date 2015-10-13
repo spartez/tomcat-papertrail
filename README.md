@@ -8,7 +8,7 @@ This library is simple extension to the org.syslog4j.syslog4. It binds the SSLTC
 2. Copy original syslog4j-0.9.46.jar lib to the same folder.
 3. Change log4j.properties (probably you find it inside /WEB-INF/classes folder)
 
-## Example of ##
+## Example of log4.properties config ##
 
 
 ```
@@ -22,4 +22,13 @@ log4j.appender.syslog4j.Protocol=tcp-ssl
 log4j.appender.syslog4j.layout=org.apache.log4j.PatternLayout
 log4j.appender.syslog4j.layout.ConversionPattern=%p: (%F:%L) %x %m %n
 ```
- 
+
+remember to add the new appender to the rootLogger config
+
+
+```
+#!properties
+
+log4j.rootLogger=WARN, console, filelog, syslog4j
+
+```
