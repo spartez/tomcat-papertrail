@@ -32,3 +32,7 @@ remember to add the new appender to the rootLogger config
 log4j.rootLogger=WARN, console, filelog, syslog4j
 
 ```
+
+## Notice ##
+
+This appender seems to be pretty slow. It's not appropriate to use it with log level less than **WARN**, or with a very verbose system. If it becomes too slow, I recommend to fix this appender (https://github.com/mrapczynski/log4j-papertrail-appender). 
