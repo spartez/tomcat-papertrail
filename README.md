@@ -4,6 +4,8 @@ This library is simple extension to the org.syslog4j.syslog4. It binds the SSLTC
 
 ## Usage ##
 
+Compiled jar file and the additional syslog4j library could be downloaded from the [Downloads](https://bitbucket.org/spartez/syslog-tcp-ssl-appender/downloads) section.
+
 1. Copy the jar file to the tomcat lib folder (or to any folder which is on the tomcat's CLASSPATH)
 2. Copy original syslog4j-0.9.46.jar lib to the same folder.
 3. Change log4j.properties (probably you find it inside /WEB-INF/classes folder)
@@ -35,4 +37,4 @@ log4j.rootLogger=WARN, console, filelog, syslog4j
 
 ## Notice ##
 
-This appender seems to be pretty slow. It's not appropriate to use it with log level less than **WARN**, or with a very verbose system. If it becomes too slow, I recommend to fix this appender (https://github.com/mrapczynski/log4j-papertrail-appender). 
+This appender seems to be pretty slow. It's not appropriate to use it with log level less than **WARN**, or with a very verbose system. If it becomes too slow, I recommend to fix this appender (https://github.com/mrapczynski/log4j-papertrail-appender).
