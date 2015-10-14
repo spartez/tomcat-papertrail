@@ -4,6 +4,22 @@ This library is simple extension to the org.syslog4j.syslog4. It binds the SSLTC
 
 ## Usage ##
 
+**SSL support:**
+
+1. Download papertail .pem file (http://help.papertrailapp.com/kb/configuration/encrypting-remote-syslog-with-tls-ssl/).
+2. Add the cert file to the JVM key store.
+
+
+```
+#!bash
+
+sudo keytool -import -alias papertrail -file papertrail.crt -keystore ${JAVA_HOME}/jre/lib/security/cacerts
+
+```
+
+ 
+** Tomcat configuration: **
+
 Compiled jar file and the additional syslog4j library could be downloaded from the [Downloads](https://bitbucket.org/spartez/syslog-tcp-ssl-appender/downloads) section.
 
 1. Copy the jar file to the tomcat lib folder (or to any folder which is on the tomcat's CLASSPATH)
