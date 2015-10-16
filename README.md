@@ -37,8 +37,8 @@ log4j.appender.syslog4j.Facility=LOCAL7
 log4j.appender.syslog4j.Host=logs3.papertrailapp.com
 log4j.appender.syslog4j.Port=12696
 log4j.appender.syslog4j.Protocol=tcp-ssl
-log4j.appender.syslog4j.layout=org.apache.log4j.PatternLayout
-log4j.appender.syslog4j.layout.ConversionPattern=%p: (%F:%L) %x %m %n
+log4j.appender.syslog4j.Layout=org.apache.log4j.PatternLayout
+log4j.appender.syslog4j.Layout.ConversionPattern=%p: (%F:%L) %x %m %n
 ```
 
 remember to add the new appender to the rootLogger config
