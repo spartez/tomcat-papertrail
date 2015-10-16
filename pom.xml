@@ -19,6 +19,12 @@
             <version>1.2.16</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -29,7 +35,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.spartez.lib.syslog.appender.SpartezSyslogApender</mainClass>
+                            <mainClass>com.spartez.lib.syslog.appender.SpartezSyslogAppender</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
