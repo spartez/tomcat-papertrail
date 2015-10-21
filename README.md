@@ -1,8 +1,8 @@
-# README #
+# How to set up Papertrail logging in Tomcat #
 
-This library is simple extension to the org.syslog4j.syslog4. It binds the SSLTCP config implementation to the "tcp-ssl" protocol type.
+This library is a simple extension to the org.syslog4j.syslog4 that will allow you to use syslog4 in Tomcat with Papertrail over SSL.
 
-## Usage ##
+## Instructions ##
 
 **SSL support:**
 
@@ -11,16 +11,13 @@ This library is simple extension to the org.syslog4j.syslog4. It binds the SSLTC
 
 
 ```
-#!bash
-
 sudo keytool -import -alias papertrail -file papertrail.crt -keystore ${JAVA_HOME}/jre/lib/security/cacerts
-
 ```
 
  
-** Tomcat configuration: **
+**Tomcat configuration:**
 
-Compiled jar file and the additional syslog4j library could be downloaded from the [Downloads](https://bitbucket.org/spartez/syslog-tcp-ssl-appender/downloads) section.
+Run `mvn package` to create JAR file and download an additional [syslog4j library](http://syslog4j.org).
 
 1. Copy the jar file to the tomcat lib folder (or to any folder which is on the tomcat's CLASSPATH)
 2. Copy original syslog4j-0.9.46.jar lib to the same folder.
@@ -30,8 +27,6 @@ Compiled jar file and the additional syslog4j library could be downloaded from t
 
 
 ```
-#!properties
-
 log4j.appender.syslog4j=com.spartez.lib.syslog.appender.SpartezSyslogApender
 log4j.appender.syslog4j.Facility=LOCAL7
 log4j.appender.syslog4j.Host=logs3.papertrailapp.com
@@ -45,10 +40,7 @@ remember to add the new appender to the rootLogger config
 
 
 ```
-#!properties
-
 log4j.rootLogger=WARN, console, filelog, syslog4j
-
 ```
 
 ## Notice ##
